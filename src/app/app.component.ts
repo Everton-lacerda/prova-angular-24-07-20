@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CepService } from './cep.service';
+import { CepService } from './services/cep.service';
 
 @Component({
 	selector: 'app-root',
@@ -55,7 +55,7 @@ export class AppComponent {
 					}
 				}
 			}).catch(error => {
-				alert('Erro ao buscar o cep')
+				alert({'Erro ao buscar o cep': error})
 				console.error(error)
 			}).finally(() => this.loading = false)
 		}
